@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Grade extends Model 
+class Grade extends Model
 {
     protected $fillable = [
-        'Name',
+        'name_ar',
+        'name_en',
         'notes',
     ];
 

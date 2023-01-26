@@ -16,7 +16,7 @@
 <!-- row -->
 <div class="row">
 
-{{-- 
+{{--
 @if ($errors->any())
     <div class="error">{{ $errors->first('Name') }}</div>
 @endif --}}
@@ -40,7 +40,7 @@
             <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
                 {{ trans('Grades_trans.add_Grade') }}
             </button>
-            
+
             <br><br>
 
             <div class="table-responsive">
@@ -60,8 +60,15 @@
                             <tr>
                                 <?php $i++; ?>
                                 <td>{{ $i }}</td>
-                                <td>{{ $Grade->Name }}</td>
-                                <td>{{ $Grade->Notes }}</td>
+
+                                @if  (  app()->getLocale() == 'ar'  )
+                                <td>{{ $Grade->name_ar }}</td>
+                                @else
+                                <td>{{ $Grade->name_en }}</td>
+                                @endif
+
+
+                                <td>{{ $Grade->notes }}</td>
                                 <td>
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                         data-target="#edit{{ $Grade->id }}"
@@ -69,7 +76,7 @@
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                         data-target="#delete{{ $Grade->id }}"
                                         title="{{ trans('Grades_trans.Delete') }}"><i
-                                            class="fa fa-trash"></i></button> 
+                                            class="fa fa-trash"></i></button>
                                 </td>
                             </tr>
 
@@ -90,7 +97,8 @@
                                         </div>
                                         <div class="modal-body">
                                             <!-- add_form -->
-                                            {{-- <form action="{{ route('Grades.update', 'test') }}" method="post">
+
+                                             {{-- <form action="{{ route('Grades.update', 'test') }}" method="post">
                                                 {{ method_field('patch') }}
                                                 @csrf
                                                 <div class="row">
@@ -135,7 +143,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>   --}}
+                            </div> --}}
 
                             <!-- delete_modal_Grade -->
                              <div class="modal fade" id="delete{{ $Grade->id }}" tabindex="-1" role="dialog"
@@ -169,15 +177,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
 
 
-                         @endforeach 
+                         @endforeach
                 </table>
             </div>
         </div>
     </div>
-</div> 
+</div>
 
 
 <!-- add_modal_Grade -->
@@ -193,31 +201,31 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-             
+
             <div class="modal-body">
                 <!-- add_form -->
                   <form action="{{ route('Grades.store') }}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col">
-                            <label for="Name" class="mr-sm-2">{{ trans('Grades_trans.stage_name_ar') }}
+                            <label for="name_ar" class="mr-sm-2">{{ trans('Grades_trans.stage_name_ar') }}
                                 :</label>
-                            <input id="Name" type="text" name="Name" class="form-control">
+                            <input id="name_ar" type="text" name="name_ar" class="form-control">
                         </div>
                         <div class="col">
-                            <label for="Name_en" class="mr-sm-2">{{ trans('Grades_trans.stage_name_en') }}
+                            <label for="name_en" class="mr-sm-2">{{ trans('Grades_trans.stage_name_en') }}
                                 :</label>
-                            <input type="text" class="form-control" name="Name_en">
+                            <input type="text" class="form-control" name="name_en">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">{{ trans('Grades_trans.Notes') }}
                             :</label>
-                        <textarea class="form-control" name="Notes" id="exampleFormControlTextarea1"
+                        <textarea class="form-control" name="notes" id="exampleFormControlTextarea1"
                             rows="3"></textarea>
                     </div>
                     <br><br>
-            </div>  
+            </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary"
@@ -228,7 +236,7 @@
 
         </div>
     </div>
-</div> 
+</div>
 
 {{-- </div> --}}
 

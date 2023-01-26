@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class GradesController extends Controller
 {
-    
+
     public function index()
     {
         $Grades = Grade::all();
@@ -20,21 +20,33 @@ class GradesController extends Controller
 
     public function create()
     {
-        
+
 
 
     }
 
-   
+
     public function store(StoreGrades $request)
     {
 
-        $validated = $request->validated();
+        try {
+            $validated = $request->validated();
+            $Grades = Grade::create([
+                'name_ar' => $request->name_ar ,
+                'name_en' => $request->name_en ,
+                'notes' => $request->notes ,
+            ]);
+            toastr()->success(trans('messages.success')) ;
+            return redirect()->back();
+        }
 
-        
+        catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+
     }
 
-   
+
     public function show($id)
     {
         //
