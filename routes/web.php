@@ -42,3 +42,10 @@ Route::group(
 
         });
 
+<<<<<<< HEAD
+=======
+ // Test Commit 
+
+
+    });
+>>>>>>> 42c67dc032e7f2ea9856f0e302c59f2da7dd3aba
