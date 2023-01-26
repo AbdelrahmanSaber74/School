@@ -1,9 +1,7 @@
 @extends('layouts.master')
 @section('css')
 
-@section('title')
-    empty
-@stop
+
 @endsection
 @section('page-header')
 <!-- breadcrumb -->

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,15 +36,7 @@ Route::group(
         })->middleware(['auth', 'verified'])->name('home');
 
 
-        // Test Commit 
 
 
         });
 
-<<<<<<< HEAD
-=======
- // Test Commit 
-
-
-    });
->>>>>>> 42c67dc032e7f2ea9856f0e302c59f2da7dd3aba
