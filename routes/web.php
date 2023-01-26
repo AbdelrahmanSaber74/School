@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 
 
+require __DIR__.'/auth.php';
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -22,12 +32,13 @@ Route::group(
         
         
      
-        Route::get('/', function () {
-            return view('dashboard');
+        Route::get('/home', function () {
+            return view('home');
+        })->middleware(['auth', 'verified'])->name('home');
+
+
+        // Test Commit 
+
+
         });
-        
 
-
-
-
-    });
