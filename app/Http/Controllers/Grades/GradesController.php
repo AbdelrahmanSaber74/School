@@ -12,19 +12,11 @@ class GradesController extends Controller
 
     public function index()
     {
+
         $Grades = Grade::all();
 
         return view('pages.Grades.Grades' , compact('Grades')) ;
     }
-
-
-    public function create()
-    {
-
-
-
-    }
-
 
     public function store(StoreGrades $request)
     {
@@ -47,31 +39,41 @@ class GradesController extends Controller
     }
 
 
-    public function show($id)
+
+    public function update(StoreGrades $request, $id)
     {
-        //
+        try {
+            $validated = $request->validated();
+            $Grade = Grade::findOrFail($request->id );
+            $Grade->update([
+                'name_ar' => $request->name_ar ,
+                 'name_en' => $request->name_en ,
+                'notes' => $request->notes ,
+            ]);
+            toastr()->success(trans('messages.Update')) ;
+            return redirect()->back();
+        }
+
+        catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+
+
     }
 
 
-    public function edit($id)
+    public function destroy(Request $request)
     {
-        //
-    }
 
+        try {
+            $Grade = Grade::findOrFail($request->id)->delete();
+            toastr()->warning(trans('messages.Delete')) ;
+            return redirect()->back();
+        }
 
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
