@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Grades\GradesController;
-
+use Illuminate\Support\Facades\Route;
 
 
 
@@ -14,6 +14,8 @@ Route::get('/', function () {
 
 
 
+//======================== Translate All Pages ========================//
+
 Route::group(
     [
 
@@ -23,13 +25,20 @@ Route::group(
 
 
 
+        //======================== Home Pages ========================//
         Route::get('/home', function () {
             return view('home');
-        })->middleware(['auth', 'verified'])->name('home');
+        })->middleware(['verified'])->name('home');
+
+        //======================== Grades Controller  ========================//
 
         Route::resource('Grades', GradesController::class);
 
+        //======================== ClassroomController Controller  ========================//
 
+        Route::resource('Classrooms', ClassroomController::class);
+        Route::post('delete_all' , [ClassroomController::class, 'delete_all'])->name('delete_all');
+        Route::post ('Filter_Classes' , [ClassroomController::class, 'Filter_Classes'])->name('Filter_Classes');
 
 
 
