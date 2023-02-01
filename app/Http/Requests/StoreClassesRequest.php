@@ -24,8 +24,8 @@ class StoreClassesRequest extends FormRequest
     public function rules()
     {
         return [
-            'List_Classes.*.name_class_ar' => 'required|unique:classrooms,name_class_ar',
-            'List_Classes.*.name_class_en' => 'required|unique:classrooms,name_class_en',
+            'List_Classes.*.name_class_ar' => 'required',
+            'List_Classes.*.name_class_en' => 'required',
             'List_Classes.*.grade_id' => 'required' ,
 
         ];
@@ -38,10 +38,6 @@ class StoreClassesRequest extends FormRequest
         'name_class_ar.required' => __('validation.required') ,
         'name_class_en.required' => __('validation.required') ,
         'grade_id.required' => __('validation.required') ,
-
-        'name_class_ar.unique' => __('validation.unique') ,
-        'name_class_en.unique' => __('validation.unique') ,
-
     ];
  }
 }

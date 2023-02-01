@@ -49,7 +49,7 @@
             <br><br>
 
                 {{-- Filter --}}
-             <form action="{{ route('Filter_Classes') }}" method="POST">
+             <form action="{{ route('filter_classes') }}" method="POST">
                 @csrf
                 <select class="selectpicker" data-style="btn-info" name="grade_id" required
                         onchange="this.form.submit()">

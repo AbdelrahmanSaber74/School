@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Grades\GradesController;
+use App\Http\Controllers\Sections\SectionController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,13 +15,13 @@ Route::get('/', function () {
 
 
 
-//======================== Translate All Pages ========================//
+ //==============================Translate all pages============================
 
 Route::group(
     [
 
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' , 'auth' ]
     ], function(){
 
 
@@ -38,8 +39,11 @@ Route::group(
 
         Route::resource('Classrooms', ClassroomController::class);
         Route::post('delete_all' , [ClassroomController::class, 'delete_all'])->name('delete_all');
-        Route::post ('Filter_Classes' , [ClassroomController::class, 'Filter_Classes'])->name('Filter_Classes');
+        Route::post ('filter_classes' , [ClassroomController::class, 'filter_classes'])->name('filter_classes');
 
+        //======================== Sections Controller  ========================//
+        Route::resource('Sections', SectionController::class);
+        Route::get('classes/{id}', [SectionController::class , 'getclasses']);
 
 
 

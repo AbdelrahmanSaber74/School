@@ -35,7 +35,7 @@ class ClassroomController extends Controller
       }
 
       toastr()->success(trans('messages.success')) ;
-      return redirect()->back();
+      return redirect()->route('Classrooms.index');
 
     }
 
@@ -62,7 +62,7 @@ class ClassroomController extends Controller
     ]);
 
     toastr()->success(trans('messages.Update')) ;
-    return redirect()->back();
+    return redirect()->route('Classrooms.index');
 
     }
 
@@ -78,7 +78,7 @@ class ClassroomController extends Controller
 
         $Grade = Classroom::findOrFail($request->id)->delete();
         toastr()->warning(trans('messages.Delete')) ;
-        return redirect()->back();
+        return redirect()->route('Classrooms.index');
 
   }
 
@@ -90,7 +90,7 @@ class ClassroomController extends Controller
         $delete_all_id = explode(',' , $request->delete_all_id )  ;
         Classroom::whereIn('id', $delete_all_id)->delete();
         toastr()->warning(trans('messages.Delete')) ;
-        return redirect()->back();
+        return redirect()->route('Classrooms.index');
 
     }
 
@@ -101,7 +101,7 @@ class ClassroomController extends Controller
 }
 
 
-public function Filter_Classes (Request $request)
+public function filter_classes (Request $request)
 {
     try {
 
@@ -114,9 +114,6 @@ public function Filter_Classes (Request $request)
         return redirect()->back()->withErrors(['error' => $e->getMessage()]);
     }
 
-
 }
-
-
 
 }

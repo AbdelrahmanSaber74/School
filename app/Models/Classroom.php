@@ -22,4 +22,9 @@ class Classroom extends Model
         return $this->belongsTo(Grade::class ,'grade_id');
     }
 
+
+    public function Sections()
+    {
+        return $this->hasMany(Section::class ,'class_id');
+    }
 }
