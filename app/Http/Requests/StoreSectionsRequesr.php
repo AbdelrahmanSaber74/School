@@ -6,11 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreSectionsRequesr extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
+
     public function authorize()
     {
         return true;
@@ -19,8 +15,8 @@ class StoreSectionsRequesr extends FormRequest
     public function rules()
     {
         return [
-            'name_section_ar' => 'required|unique:Sections,name_section_ar,'.$this->id,
-            'name_section_en' => 'required|unique:Sections,name_section_en,'.$this->id,
+            'name_section_ar' => 'required',
+            'name_section_en' => 'required',
             'grade_id' => 'required',
             'class_id' => 'required',
 
