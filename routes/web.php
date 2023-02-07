@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Grades\GradesController;
+use App\Http\Controllers\MyParentController;
 use App\Http\Controllers\Sections\SectionController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,11 @@ Route::group(
         //======================== Sections Controller  ========================//
         Route::resource('Sections', SectionController::class);
         Route::get('classes/{id}', [SectionController::class , 'getclasses']);
+
+
+        //======================== May_Parents Controller  ========================//
+        Route::resource('Parents', MyParentController::class);
+        Route::view('AddParents', 'livewire.Show_Form')->name('Add_Parents');
 
 
 

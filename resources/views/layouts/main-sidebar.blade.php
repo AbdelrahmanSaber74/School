@@ -102,24 +102,30 @@
                         <ul id="Teachers-menu" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('Teachers.index')}}">{{trans('main_trans.List_Teachers')}}</a> </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
 
                     <!-- Parents-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Parents-menu">
-                            <div class="pull-left"><i class="fas fa-user-tie"></i><span
+                            <div class="pull-left"><i class="fa fa-podcast"></i><span
                                     class="right-nav-text">{{trans('main_trans.Parents')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
+
                         <ul id="Parents-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{url('add_parent')}}">{{trans('main_trans.List_Parents')}}</a> </li>
+                            <li> <a href="{{ route('Parents.index')}}">{{trans('main_trans.List_Parents')}}</a> </li>
+                            <li> <a href="{{ route('Add_Parents')}}">{{trans('main_trans.Add_Parent')}}</a> </li>
+
                         </ul>
+
+
+
                     </li>
 
                     <!-- Accounts-->
-                    <li>
+                    {{-- <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu">
                             <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span
                                     class="right-nav-text">{{trans('main_trans.Accounts')}}</span></div>
@@ -130,10 +136,10 @@
                             <li> <a href="{{route('Fees.index')}}">الرسوم الدراسية</a> </li>
                             <li> <a href="calendar-list.html">List Calendar</a> </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
                     <!-- Attendance-->
-                    <li>
+                    {{-- <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Attendance-icon">
                             <div class="pull-left"><i class="fas fa-calendar-alt"></i><span class="right-nav-text">{{trans('main_trans.Attendance')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
@@ -144,10 +150,10 @@
                             <li> <a href="themify-icons.html">Themify icons</a> </li>
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
                     <!-- Exams-->
-                    <li>
+                    {{-- <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Exams-icon">
                             <div class="pull-left"><i class="fas fa-book-open"></i><span class="right-nav-text">{{trans('main_trans.Exams')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
@@ -159,10 +165,10 @@
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
                         </ul>
                     </li>
-
+ --}}
 
                     <!-- library-->
-                    <li>
+                    {{-- <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#library-icon">
                             <div class="pull-left"><i class="fas fa-book"></i><span class="right-nav-text">{{trans('main_trans.library')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
@@ -173,11 +179,11 @@
                             <li> <a href="themify-icons.html">Themify icons</a> </li>
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
 
                     <!-- Onlinec lasses-->
-                    <li>
+                    {{-- <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Onlineclasses-icon">
                             <div class="pull-left"><i class="fas fa-video"></i><span class="right-nav-text">{{trans('main_trans.Onlineclasses')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
@@ -188,11 +194,11 @@
                             <li> <a href="themify-icons.html">Themify icons</a> </li>
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
 
                     <!-- Settings-->
-                    <li>
+                    {{-- <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Settings-icon">
                             <div class="pull-left"><i class="fas fa-cogs"></i><span class="right-nav-text">{{trans('main_trans.Settings')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
@@ -203,11 +209,11 @@
                             <li> <a href="themify-icons.html">Themify icons</a> </li>
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
 
                     <!-- Users-->
-                    <li>
+                    {{-- <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Users-icon">
                             <div class="pull-left"><i class="fas fa-users"></i><span class="right-nav-text">{{trans('main_trans.Users')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
@@ -217,7 +223,7 @@
                             <li> <a href="fontawesome-icon.html">font Awesome</a> </li>
                             <li> <a href="themify-icons.html">Themify icons</a> </li>
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
-                        </ul>
+                        </ul> --}}
                     {{-- </li> --}}
 
                 </ul>

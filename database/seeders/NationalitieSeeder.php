@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Nationalitie;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class NationalitieSeeder extends Seeder
 {
@@ -14,8 +16,8 @@ class NationalitieSeeder extends Seeder
     public function run()
     {
 
+        Nationalitie::truncate();
 
-   Nationalitie::truncate();
 
        $nationals = [
 
@@ -1258,6 +1260,7 @@ class NationalitieSeeder extends Seeder
         ]);
 
     }
+
 
 
     }
