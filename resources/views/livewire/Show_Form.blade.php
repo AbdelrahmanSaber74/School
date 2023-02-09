@@ -8,20 +8,6 @@
 @section('title')
     {{ __('Parent_trans.title_page') }}
 @endsection
-@section('page-header')
-    <!-- breadcrumb -->
-    <div class="page-title">
-        <div class="row">
-            <div class="col-sm-6">
-                <h4 class="mb-0"> {{__('Parent_trans.add_parent') }}</h4>
-            </div>
-
-        </div>
-    </div>
-    <br>
-    <!-- breadcrumb -->
-@endsection
-
 
 @section('content')
 <!-- row -->

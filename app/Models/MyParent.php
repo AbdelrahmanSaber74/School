@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class MyParent extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'file_name',
-        'parent_id',
-    ];
+
+    protected $guarded = [];
+
 
 }

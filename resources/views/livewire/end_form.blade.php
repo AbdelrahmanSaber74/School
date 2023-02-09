@@ -15,8 +15,6 @@
                    <input type="file" wire:model="photos" accept="image/*" multiple>
                </div>
 
-
-
                <br>
 
                <input type="hidden" wire:model="parent_id">
@@ -24,14 +22,14 @@
                <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button"
                        wire:click="back(2)">{{ trans('Parent_trans.Back') }}</button>
 
-               {{-- @if($updateMode)
+               @if($updateMode)
                    <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="submitForm_edit"
                            type="button">{{trans('Parent_trans.Finish')}}
                    </button>
-               @else --}}
+               @else
                    <button class="btn btn-success btn-sm btn-lg pull-right" wire:click="submitForm"
                            type="button">{{ trans('Parent_trans.Finish') }}</button>
-               {{-- @endif --}}
+                @endif
 
            </div>
        </div>

@@ -32,12 +32,19 @@ return [
     'Phone_Mother' => 'رقم الهاتف',
     'Address_Mother' => 'عنوان الام',
 
+    'Warning_Grade'=> 'هل انت متاكد من عملية الحذف ؟',
+    'edit_parent'=> 'تعديل ولي الامر',
+    'delete_parent'=> 'حذف ولي الامر',
+
     'Next' => 'التالي',
     'Back' => 'السابق',
     'Finish' => 'تاكيد',
     'Choose' => 'اختيار من القائمة',
     'Attachments' => 'المرفقات',
     'Processes' => 'العمليات',
+    'Delete'=>'حذف',
+    'Close' => 'اغلاق',
+    'Edit'=>'تعديل',
 
 
 

@@ -115,8 +115,7 @@
                         </a>
 
                         <ul id="Parents-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{ route('Parents.index')}}">{{trans('main_trans.List_Parents')}}</a> </li>
-                            <li> <a href="{{ route('Add_Parents')}}">{{trans('main_trans.Add_Parent')}}</a> </li>
+                            <li> <a href="{{ route('Add_Parents')}}">{{trans('main_trans.List_Parents')}}</a> </li>
 
                         </ul>
 

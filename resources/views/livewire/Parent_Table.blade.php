@@ -16,21 +16,65 @@
         </thead>
         <tbody>
         <?php $i = 0; ?>
-        {{-- @foreach ($my_parents as $my_parent)
+        @foreach ($My_Parents as $my_parent)
             <tr>
-//                <td>{{ $i }}</td>
-                <td>{{ $my_parent->Email }}</td>
-                <td>{{ $my_parent->Name_Father }}</td>
-                <td>{{ $my_parent->National_ID_Father }}</td>
-                <td>{{ $my_parent->Passport_ID_Father }}</td>
-                <td>{{ $my_parent->Phone_Father }}</td>
-                <td>{{ $my_parent->Job_Father }}</td>
+             <td>{{ $i }}</td>
+                <td>{{ $my_parent->email }}</td>
+                <td>{{ $my_parent->name_father_ar }}</td>
+                <td>{{ $my_parent->national_id_father }}</td>
+                <td>{{ $my_parent->passport_id_father }}</td>
+                <td>{{ $my_parent->phone_father }}</td>
+                <td>{{ $my_parent->job_father_ar }}</td>
                 <td>
-                    <button wire:click="edit({{ $my_parent->id }})" title="{{ trans('Grades_trans.Edit') }}"
+                     <button wire:click="edit({{ $my_parent->id }})" title="{{ trans('Parent_trans.Edit') }}"
                             class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-danger btn-sm" wire:click="delete({{ $my_parent->id }})" title="{{ trans('Grades_trans.Delete') }}"><i class="fa fa-trash"></i></button>
+
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                            data-target="#delete{{ $my_parent->id}}"
+                            title="{{ trans('Parent_trans.Delete') }}"><i
+                                class="fa fa-trash"></i></button>
+
+                    {{-- <button type="button" class="btn btn-danger btn-sm" wire:click="delete({{ $my_parent->id }})" title="{{ trans('Parent_trans.Delete') }}"><i class="fa fa-trash"></i></button> --}}
                 </td>
             </tr>
-        @endforeach --}}
+
+
+                            <!-- delete_modal_Grade -->
+                            <div class="modal fade" id="delete{{$my_parent->id}}" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                id="exampleModalLabel">
+                                                {{ trans('Parent_trans.delete_parent') }}
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form  method="post">
+                                                {{ method_field('HEAD') }}
+                                                @csrf
+                                                {{ trans('Parent_trans.Warning_Grade') }}
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">{{ trans('Parent_trans.Close') }}</button>
+
+                                                    <button wire:click="delete({{ $my_parent->id }})"  type="submit"
+                                                        class="btn btn-danger">{{ trans('Parent_trans.Delete') }}</button>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+        @endforeach
     </table>
 </div>

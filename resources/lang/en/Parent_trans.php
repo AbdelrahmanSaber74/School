@@ -30,12 +30,18 @@ return [
     'Phone_Mother' => 'Telephone Number',
     'Address_Mother' => 'Address Mother',
 
+    'Warning_Grade'=> 'Are Sure Of The Deleting Process ?',
+    'edit_parent'=> 'Edit_Parent',
+    'delete_parent'=> 'Delete_Parent',
+
     'Next' => 'Next',
     'Back' => 'Back',
     'Finish' => 'Finish',
     'Choose' => 'Choose',
     'Attachments' => 'Attachments',
     'Processes' => 'Processes',
-
+    'Delete'=>'Delete',
+    'Close' => 'Close',
+    'Edit'=>'Edit',
 
 ];

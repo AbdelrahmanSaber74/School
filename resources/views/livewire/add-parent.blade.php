@@ -1,5 +1,23 @@
 <div>
 
+    <!-- breadcrumb -->
+    <div class="page-title">
+        <div class="row">
+
+            <div class="col-sm-6">
+                @if ($updateMode)
+                <h4 class="mb-0"> {{__('Parent_trans.edit_parent') }}</h4>
+                @else
+                <h4 class="mb-0"> {{__('Parent_trans.add_parent') }}</h4>
+                @endif
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <!-- breadcrumb -->
+
+
 
     @if (!empty($successMessage))
     <div class="alert alert-success" id="success-alert">
@@ -12,14 +30,16 @@
         <div class="alert alert-danger" id="success-danger">
         <button type="button" class="close" data-dismiss="alert">x</button>
         {{ $catchError }}
-    </div>
-    @endif
+        </div>
+        @endif
 
-{{-- @if($show_table)
-@include('livewire.Parent_Table')
-@else
 
- --}}
+    @if($show_table)
+
+    @include('livewire.Parent_Table')
+
+    @else
+
  <div class="stepwizard">
     <div class="stepwizard-row setup-panel">
 
@@ -54,9 +74,7 @@
 @include('livewire.end_form')
 
 
-
-
-
-
+@endif
 
 </div>
+
